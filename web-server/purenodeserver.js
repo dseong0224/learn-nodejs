@@ -3,7 +3,7 @@ const url = require('url');
 
 function handler(req, res) {
 
-  const parsedUrl = url.parse(req.url, true);
+  const parsedUrl = url.parse(req.url, true);//parses url string into an object or value
   // console.log("url: ", parsedUrl);
 
   res.setHeader('x-server-date', new Date());
