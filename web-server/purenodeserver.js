@@ -1,11 +1,12 @@
-var http = require('http');
-var  url = require('url');
+const http = require('http');
+const  url = require('url');
 
 function handler(req,res){
 
-  var  parsedUrl = url.parse(req.url, true);
+  const  parsedUrl = url.parse(req.url, true);
   // console.log("url: ", parsedUrl);
 
+  res.setHeader('x-server-date', new Date());
   if(parsedUrl.pathname === '/'){
     res.writeHead(200,{'Content-type':'text/plain'});
     res.write('Hello, I am a webserver!');
