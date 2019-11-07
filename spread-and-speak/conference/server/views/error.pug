@@ -1,27 +1,31 @@
-  link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
-  script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
-  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  // ---- Include the above in your HEAD tag --------
-.error-content
-  .container
-    .row
-      .col-md-12
-        .error-text
-          h1.error 404 Error
-          .im-sheep
-            .top
-              .body
-              .head
-                .im-eye.one
-                .im-eye.two
-                .im-ear.one
-                .im-ear.two
-            .im-legs
-              .im-leg
-              .im-leg
-              .im-leg
-              .im-leg
-          h4 Oops! This page Could Not Be Found!
-          p
-            | Sorry bit the page you are looking for does not exist, have been removed or name changed.
-          a.btn.btn-primary.btn-round(href='<?=base_url()?>') Go to homepage
+doctype html
+html
+  head
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/css/error.css', type='text/css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    // ---- Include the above in your HEAD tag --------
+    body
+      .error-content
+        .container
+          .row
+            .col-md-12
+              .error-text
+                h1.error=status
+                .im-sheep
+                  .top
+                    .body
+                    .head
+                      .im-eye.one
+                      .im-eye.two
+                      .im-ear.one
+                      .im-ear.two
+                  .im-legs
+                    .im-leg
+                    .im-leg
+                    .im-leg
+                    .im-leg
+                h4=message
+                if(error)
+                  pre=error.stack
