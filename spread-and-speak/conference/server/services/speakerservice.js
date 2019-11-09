@@ -8,8 +8,9 @@ class SpeakerService {
     this.datafile = datafile;
   }
 
-  getData(){
-
+  async getData(){
+    const data = await readFile(this.datafile, 'utf8');
+    return JSON.parse(data).speakers;
   }
 }
 
