@@ -22,6 +22,17 @@ app.get('/favicon.ico', (req, res, next) => {
   return res.sendStatus(204);
 });
 
+app.use(async (req,res,next)=>{
+  try {
+    const names = await speakerService.getNames();
+    console.log(names);
+    res.locals.speakerNames = names;
+    return next();
+  } catch(err){
+    return next(err);
+  }
+})
+
 app.use('/', routes());
 
 app.use((req,res,next)=>{
