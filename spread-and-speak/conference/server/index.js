@@ -7,7 +7,7 @@ const app = express();
 
 const config = configs[app.get('env')];
 
-const speakerService = new SpeakerService();
+const speakerService = new SpeakerService(config.data.speakers);
 
 app.set('view engine','pug');
 if(app.get('env') === 'development'){
