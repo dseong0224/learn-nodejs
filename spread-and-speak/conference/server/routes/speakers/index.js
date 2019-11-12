@@ -22,13 +22,11 @@ module.exports = (param) => {
     } catch (err) {
       return err;
     }
-
   });
   router.get('/:name', (req, res, next) => {
     return res.render('speakers/detail', {
       page: req.params.name,
     });
   });
-
   return router
 }
