@@ -6,7 +6,7 @@ module.exports = (param) => {
 
   const {speakerService} = param;
 
-  router.get('/', (req, res, next) => {
+  router.get('/', async (req, res, next) => {
     const speakerslist = await speakerService.getList();
     return res.render('speakers',{
       page: 'All Speakers',
