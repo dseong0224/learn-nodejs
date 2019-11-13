@@ -3,7 +3,7 @@ const util = require('util');
 
 const readFile = util.promisify(fs.readFile);
 
-class SpeakerService {
+class FeedbackService {
   constructor(datafile) {
     this.datafile = datafile;
   }
