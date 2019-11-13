@@ -23,6 +23,7 @@ module.exports = (param) => {
       return err;
     }
   });
+  
   router.get('/:name', async (req, res, next) => {
     try {
       const promises = [];
